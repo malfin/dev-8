@@ -26,8 +26,8 @@ def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            auth.login(request, form.get_user())
-            return HttpResponseRedirect(reverse('mainapp:index'))
+            form.save()
+            return HttpResponseRedirect(reverse('authapp:login'))
     else:
         form = RegisterForm()
     content = {

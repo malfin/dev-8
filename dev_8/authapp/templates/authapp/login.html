@@ -37,22 +37,25 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
-<body class="text-center" cz-shortcut-listen="true">
+<body class="text-center">
 
 <main class="form-signin">
     <form method="post">
-        <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
+        <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
         {% csrf_token %}
-        {{ form.as_p }}
-        <div class="row">
-            <div class="col">
-                <a href="{% url 'authapp:login' %}" class="btn btn-success">Войти</a>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary">Зарегистрироваться</button>
-            </div>
 
+        {{ form.as_p }}
+
+        <div class="row">
+
+            <div class="col">
+                <a href="{% url 'authapp:register' %}" class="btn btn-success">Зарегистрироваться</a>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">Войти</button>
+            </div>
         </div>
+
     </form>
 </main>
 </body>

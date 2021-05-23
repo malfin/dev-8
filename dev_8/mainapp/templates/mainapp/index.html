@@ -29,15 +29,24 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{% url 'mainapp:index' %}" class="nav-link px-2 link-secondary">Главная</a></li>
+{#            <li><a href="{% url 'mainapp:statistics' %}" class="nav-link px-2 text-success">Статистика</a></li>#}
         </ul>
 
         <div class="col-md-3 text-end">
-            <a href="{% url 'auth:logout' %}" class="btn btn-primary">Выйти</a>
+            <a href="{% url 'authapp:logout' %}" class="btn btn-primary">Выйти</a>
         </div>
     </header>
 </div>
 
-<main class="form-signin">
+<main class="container">
+    {% block content %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button class="btn btn-success">Отправить</button>
+        </form>
+    {% endblock %}
 
 </main>
 </body>

@@ -17,10 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('accounts/', include(('django.contrib.auth.urls', 'auth'), namespace='auth')),
-    # path('accounts/', include(('django.contrib.auth.urls', 'register'), namespace='register')),
     path('', include('mainapp.urls', namespace='mainapp')),
-    # path('accounts/', include('authapp.urls', namespace='authapp')),
+    path('accounts/', include('authapp.urls', namespace='authapp')),
 
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,15 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}
+{% block content %}
+    {% for item in choice_yes %}
+        <ul>
+            <li>На "Да" ответили: {{ item }} пользователей</li>
+        </ul>
+    {% endfor %}
+    {% for item in choice_no %}
+        <ul>
+            <li>На "Нет" ответили: {{ item }} пользователей</li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}

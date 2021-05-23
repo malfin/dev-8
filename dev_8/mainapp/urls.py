@@ -20,5 +20,5 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
-
+    # path('statistics/', mainapp.statistics, name='statistics'),
 ]
